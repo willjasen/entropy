@@ -39,7 +39,7 @@ class entropy {
 		frequency_array[byteValue]++;
 	    }
             
-
+	    // calculate entropy
 	    double entropy = 0;
 	    for(int i=0;i<frequency_array.length;i++) {
 	        if(frequency_array[i]!=0) {
