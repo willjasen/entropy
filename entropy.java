@@ -21,9 +21,7 @@ class entropy {
       	}
 
         File file = new File(filepath);
-        FileInputStream fin = null;
-        try {
-            fin = new FileInputStream(file);
+        try (FileInputStream fin = new FileInputStream(file)){
             byte fileContent[] = new byte[(int)file.length()];
             
             // Read data into the byte array
@@ -65,19 +63,6 @@ class entropy {
 
         catch (IOException ioe) {
             System.out.println("Exception while reading file " + ioe);
-        }
-
-        finally {
-            // close the streams using close method
-            try {
-                if (fin != null) {
-                    fin.close();
-                }
-            }
-
-            catch (IOException ioe) {
-                System.out.println("Error while closing stream: " + ioe);
-            }
         }
     }
 }
