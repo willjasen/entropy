@@ -36,7 +36,7 @@ class entropy {
 	    // count frequency of occuring bytes
             for(int i=0; i<fileContentLength; i++) {
 		byte byteValue=fileContent[i];
-		frequency_array[byteValue]++;
+		frequency_array[Byte.toUnsignedInt(byteValue)]++;
 	    }
             
 	    // calculate entropy
